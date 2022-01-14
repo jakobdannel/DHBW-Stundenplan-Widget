@@ -52,17 +52,15 @@ async function createWidget(items) {
 //  formatting of the time string to fit scriptable API
 	    let startTimeDate = new Date()
 	    let dF = new DateFormatter()
-	    dF.dateFormat = 'yyyy-MM-dd HH:mm:ss.SSS'
+	    dF.dateFormat = 'yyyy-MM-dd HH:mm:ss.SSSZ'
 	    let dstr = dF.string(startTimeDate)
 	    
 	    let startTime = data[i].startTime
 	    startTime = startTime.replace("T", ' ')
-	    startTime = startTime.replace("Z", ' ')
 	    startTime = dF.date(startTime)
 	
 	    let endTime = data[i].endTime
 	    endTime = endTime.replace("T", ' ')
-	    endTime = endTime.replace("Z", ' ')
 	    endTime = dF.date(endTime)
 	    
 	    dF.dateFormat ="H:mm"
