@@ -82,15 +82,20 @@ async function createWidget(items) {
           lecture3.textColor = Color.red()
         } else if (data[i].type == "ONLINE") {
           lecture3.textColor = Color.blue()
+        } else if (data[i].type == "HYBRID") {
+	     lecture3.textColor = Color.orange()
         }
         const lecture4 = list.addText(data[i].lecturer)
         lecture4.rightAlignText()
-        lecture4.font = Font.mediumSystemFont(10)
+        lecture4.font = Font.mediumSystemFont(12)
         lecture4.textColor = Color.white()
-        const lecture5 = list.addText(data[i].rooms[0])
-        lecture5.rightAlignText()
-        lecture5.font = Font.mediumSystemFont(12)
-        lecture5.textColor = Color.white()
+        for(let r of data[i].rooms)
+        {
+	     lecture5 = list.addText(r)
+          lecture5.rightAlignText()
+          lecture5.font = Font.mediumSystemFont(10)
+          lecture5.textColor = Color.white()
+        }
         k++
       }
     }
