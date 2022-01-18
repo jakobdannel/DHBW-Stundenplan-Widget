@@ -44,9 +44,11 @@ async function createWidget(items) {
     const line1 = list.addText("Vorlesungsplan")
     line1.font = Font.mediumSystemFont(18)
     line1.centerAlignText()
+    line1.textColor = Color.white()
 
     const line2 = list.addText(data[0].course)
     line2.centerAlignText()
+    line2.textColor = Color.white()
 
     let maxCourses = 3
     let k = 0
@@ -73,6 +75,7 @@ async function createWidget(items) {
         lecture1.applyDateStyle()
         lecture1.textColor = Color.gray()
         const lecture2 = list.addText(combinedTime)
+        lecture2.textColor = Color.white()
         const lecture3 = list.addText(data[i].name)
         lecture3.font = Font.mediumSystemFont(18)
         if (data[i].type == "PRESENCE") {
@@ -83,9 +86,11 @@ async function createWidget(items) {
         const lecture4 = list.addText(data[i].lecturer)
         lecture4.rightAlignText()
         lecture4.font = Font.mediumSystemFont(10)
+        lecture4.textColor = Color.white()
         const lecture5 = list.addText(data[i].rooms[0])
         lecture5.rightAlignText()
         lecture5.font = Font.mediumSystemFont(12)
+        lecture5.textColor = Color.white()
         k++
       }
     }
